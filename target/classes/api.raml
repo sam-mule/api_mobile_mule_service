@@ -1,0 +1,41 @@
+#%RAML 0.8
+baseUri: https://mocksvc.mulesoft.com/mocks/0fc40c15-e9f9-4f26-ab3c-e4bb1d6dd492
+title: Product API
+version: 0.1
+/products:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [ 
+                {
+                  "productCode": "TS_M_S",
+                  "description": "Small T-shirt",
+                  "quantityInStock": 30,
+                  "unitPrice":20,
+                  "imageUrl":"/content/products/TS_M.jpg"
+                },
+                {
+                  "productCode": "TS_M_M",
+                  "description": "Medium T-shirt",
+                  "quantityInStock": 22,
+                  "unitPrice":20,
+                  "imageUrl":"/content/products/TS_M.jpg"
+                },
+                {
+                  "productCode": "W_BOTTLE",
+                  "description": "Muly Water Bottle",
+                  "quantityInStock" : 100,
+                  "unitPrice":10,
+                  "imageUrl":"/content/products/WATERBOTTLE.jpg"
+                }
+              ]
+  /{pid}:
+    uriParameters:
+      pid: 
+        type: string
+    get:
+    put:
+        
